@@ -1,0 +1,22 @@
+{
+  "name": "treeserve",
+  "version": "0.0.1",
+  "description": "A server that serves tree data from an open data api.",
+  "scripts": {
+    "tsc": "tsc",
+    "serve": "node ./build/server.js"
+  },
+  "author": "Brian Kraus (suark)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/es6-shim": "^0.31.37",
+    "@types/express": "^4.16.0",
+    "@types/node-schedule": "^1.2.2",
+    "typescript": "^3.0.1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.3",
+    "node-schedule": "^1.3.0"
+  }
+}
