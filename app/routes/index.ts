@@ -1,1 +1,1 @@
-export { default as TreeRoute } from './trees'
+export { default as treeRoute } from './trees'
