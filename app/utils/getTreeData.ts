@@ -17,7 +17,7 @@ const getTreeData = (rootDir: string) => {
             try {
                 fs.writeFileSync(filename, JSON.stringify(response))
             } catch (error) {
-                console.log('did not right file', error)
+                console.log('did not write file', error)
             }
         })
         .catch(() => {
