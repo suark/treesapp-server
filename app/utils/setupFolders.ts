@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import { dataDirectory } from './paths'
 
 const setupDirectory = (directory: string): boolean => {
     try {
@@ -19,8 +20,7 @@ const setupDirectory = (directory: string): boolean => {
 }
 
 const setupFolders = (rootDir: string): boolean => {
-    const dataDirectory = path.normalize(rootDir + '/data')
-    return setupDirectory(dataDirectory)
+    return setupDirectory(path.normalize(rootDir + dataDirectory))
 }
 
 export default setupFolders

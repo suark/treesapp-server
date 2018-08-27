@@ -1,1 +1,1 @@
-export { default as TreeFetchJob } from './getTreeData'
+export { default as treeFetchJob } from './getTreesJob'
