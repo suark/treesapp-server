@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import { dataDirectory } from './paths'
+import { dataDirectory } from './constants'
 
 const setupDirectory = (directory: string): boolean => {
     try {
