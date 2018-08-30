@@ -10,22 +10,21 @@ import {
     Fetches tree data. If successful, it stores it in a file and a cache object.
     Takes a directory name to know where to save the data.
 */
-const getTreeData = (rootDir: string) => {
+const getTreeData = async (rootDir: string) => {
     const filename = path.normalize(rootDir + dataDirectory + '/trees.json')
-    axios.get(dataSourceURL)
-        .then((response) => {
+    console.log(filename)
+    try {
+        const response = await axios.get(dataSourceURL)
+        if (response.status === 200) {
             try {
-                fs.writeFileSync(filename, JSON.stringify(response))
+                fs.writeFileSync(filename, JSON.stringify(response.data))
             } catch (error) {
                 console.log('did not write file', error)
             }
-        })
-        .catch(() => {
-            console.log('failed to get data')
-        })
-        .then(() => {
-            console.log('pointless ending')
-        })
+        }
+    } catch (error) {
+        console.log(`error: ${error}`)
+    }
 }
 
 export default getTreeData
