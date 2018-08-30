@@ -19,11 +19,11 @@ const getTreeData = async (rootDir: string) => {
             try {
                 fs.writeFileSync(filename, JSON.stringify(response.data))
             } catch (error) {
-                console.log('did not write file', error)
+                console.warn(`Did not write tree data. error: ${error}`)
             }
         }
     } catch (error) {
-        console.log(`error: ${error}`)
+        console.warn(`Did not fetch tree data. error: ${error}`)
     }
 }
 
