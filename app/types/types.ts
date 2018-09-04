@@ -4,6 +4,10 @@ interface LatLng {
 }
 
 export interface TreeMarker {
-    title: String
+    title: string
     coordinate: LatLng
+}
+
+export interface TreeMarkerMap {
+    [species: string]: Array<TreeMarker>
 }
