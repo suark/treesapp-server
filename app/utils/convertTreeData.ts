@@ -1,4 +1,4 @@
-import { TreeMarker, TreeMarkerMap, TreeProperties } from '../types/types'
+import { TreeMarker, TreeMarkerMap, TreeProperties } from '../types'
 import { Point, Feature } from 'geojson';
 
 const PROPERTIES = 'properties'
@@ -7,7 +7,7 @@ const GEOMETRY = 'geometry'
 const COORDINATES = 'coordinates'
 
 const isValidTree = (tree: any): tree is Feature<Point, TreeProperties> => {
-    if (  //fix me properties does not contain geometry.
+    if (
         tree[PROPERTIES] != null &&
         tree[PROPERTIES][SPECIES] != null &&
         typeof tree[PROPERTIES][SPECIES] === 'string' &&
@@ -19,13 +19,11 @@ const isValidTree = (tree: any): tree is Feature<Point, TreeProperties> => {
     ) {
         return true
     } else {
-        console.log('invalid tree', tree)
         return false
     }
 }
 
-const convertTreeData = (trees: any): TreeMarkerMap => {
-    console.log(trees)
+export const convertTreeData = (trees: any): TreeMarkerMap => {
     let treeMarkerMap: TreeMarkerMap = {}
     if (trees.features != null && Array.isArray(trees.features)) {
         for (let index = 0; index < trees.features.length; index++) {
@@ -51,5 +49,3 @@ const convertTreeData = (trees: any): TreeMarkerMap => {
     }
     return treeMarkerMap
 }
-
-export default convertTreeData

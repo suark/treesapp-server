@@ -1,26 +1,19 @@
-// External
 import express from 'express'
-// Internal
-import {
-    treeRoute,
-} from './routes'
-import {
-    setupFolders,
-    getTreeData,
-} from './utils'
-// import { treeFetchJob } from './jobs'
+
+import { treeRoute } from './routes'
+import { setupFolders, getTreeData, logger } from './utils'
 
 const app: express.Application = express()
 const port: number = 3000
 
 const server = app.listen(port, () => {
-    console.log(`Listening at http://localhost:${port}/`)
+    logger.log(`Listening at http://localhost:${port}/`)
 })
 
 if (setupFolders(__dirname)) {
     getTreeData(__dirname)
 } else {
-    console.log('Required folder structure could not be created. Closing server.')
+    logger.warn('Required folder structure could not be created. Closing server.')
     server.close()
 }
 

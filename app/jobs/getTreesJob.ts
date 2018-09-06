@@ -8,7 +8,6 @@ treeFetchingRule.second = 59
 
 const startTreeFetchingJob = () => {
     return scheduleJob(treeFetchingRule, () => {
-        console.log('going to fetch trees')
     })
 }
 

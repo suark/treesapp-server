@@ -1,2 +1,3 @@
-export { default as setupFolders } from './setupFolders'
-export { default as getTreeData } from './getTreeData'
+export { setupFolders } from './setupFolders'
+export { getTreeData } from './getTreeData'
+export { logger } from './logger'
