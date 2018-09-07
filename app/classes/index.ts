@@ -1,4 +1,4 @@
-import { TreeMarkerMap } from "../types";
+import { TreeMarkerMap } from "../types"
 
 export class TreeCache {
     private _lastUpdated: number

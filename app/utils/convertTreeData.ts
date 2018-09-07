@@ -1,5 +1,5 @@
 import { TreeMarker, TreeMarkerMap, TreeProperties } from '../types'
-import { Point, Feature } from 'geojson';
+import { Point, Feature } from 'geojson'
 
 const PROPERTIES = 'properties'
 const SPECIES = 'species'
