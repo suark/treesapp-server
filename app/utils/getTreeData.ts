@@ -29,7 +29,7 @@ export const getTreeData = async (rootDir: string) => {
                 fs.writeFileSync(filename, JSON.stringify(treeLog))
                 logger.log('Done Writing Tree Data')
                 treeCache.data = treeMarkerMap
-                logger.log('Cache is populated')
+                logger.log('Tree Cache is populated')
             } catch (error) {
                 logger.warn(`Did not write tree data. error: ${error}`)
             }

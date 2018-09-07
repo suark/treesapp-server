@@ -14,10 +14,10 @@ export const setupData = (rootDir: string) => {
         data = JSON.parse(fs.readFileSync(filePath, 'utf8'))
         logger.log('Done Getting Tree Data from file')
     } catch (error) {
-        logger.warn('Data file is not currently stored.')
+        logger.warn('Tree Data file is not currently stored.')
     }
     if (data != null) {
-        logger.log('Loading cache from stored data file.')
+        logger.log('Loading Tree Cache from stored Tree Data file.')
         treeCache.data = data
     } else {
         getTreeData(rootDir)
